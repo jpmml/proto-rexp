@@ -26,27 +26,27 @@ The library JAR file (together with source and javadoc JAR files) is distributed
 
 Writing an RExp message:
 
-```
+```R
 library("RProtoBuf")
 
 writeRExp = function(obj){
-  con = file("rexp.pb", open = "wb")
-  serialize_pb(obj, con)
-  close(con)
+	con = file("rexp.pb", open = "wb")
+	serialize_pb(obj, con)
+	close(con)
 }
 ```
 
 Reading an RExp message:
 
-```
+```R
 library("RProtoBuf")
 
 readRExp = function(){
-  con = file("rexp.pb", open = "rb")
-  obj = unserialize_pb(con)
-  close(con)
+	con = file("rexp.pb", open = "rb")
+	obj = unserialize_pb(con)
+	close(con)
 
-  return (obj)
+	return (obj)
 }
 ```
 
@@ -54,35 +54,35 @@ readRExp = function(){
 
 Reading an RExp message:
 
-```
+```java
 public RExp readRExp() throws IOException {
-  InputStream is = new FileInputStream("rexp.pb");
+	InputStream is = new FileInputStream("rexp.pb");
 
-  try {
-    CodedInputStream cis = CodedInputStream.newInstance(is);
+	try {
+		CodedInputStream cis = CodedInputStream.newInstance(is);
 
-    RExp obj = RExp.parseFrom(cis);
+		RExp obj = RExp.parseFrom(cis);
 
-    return obj;
-  } finally {
-    is.close();
-  }
+		return obj;
+	} finally {
+		is.close();
+	}
 }
 ```
 
 Writing an RExp message:
 
-```
+```java
 public void writeRExp(RExp obj) throws IOException {
-  OutputStream os = new FileOutputStream("rexp.pb");
+	OutputStream os = new FileOutputStream("rexp.pb");
 
-  try {
-    CodedOutputStream cos = CodedOutputStream.newInstance(os);
+	try {
+		CodedOutputStream cos = CodedOutputStream.newInstance(os);
 
-    obj.writeTo(cos);
-  } finally {
-    os.close();
-  }
+		obj.writeTo(cos);
+	} finally {
+		os.close();
+	}
 }
 ```
 
