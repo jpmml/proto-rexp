@@ -7,6 +7,19 @@ Java library for reading and writing RProtoBuf messages
 
 * [RProtoBuf] (http://cran.r-project.org/web/packages/RProtoBuf) 0.4.2 or newer.
 
+# Installation #
+
+The current version of Proto-RExp is **1.0.0** (21 June, 2015).
+
+The library JAR file (together with source and javadoc JAR files) is distributed via Maven Central repository:
+```xml
+<dependency>
+	<groupId>org.jpmml</groupId>
+	<artifactId>proto-rexp</artifactId>
+	<version>1.0.0</version>
+</dependency>
+```
+
 # Usage #
 
 ### The R side of operations
